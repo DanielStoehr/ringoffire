@@ -6,7 +6,7 @@ export class Game {
 
   constructor() {
     for (let i = 1; i <= 13; i++) {
-      this.stack.push('ace_' + i);
+      this.stack.push('spades_' + i);
       this.stack.push('hearts_' + i);
       this.stack.push('clubs_' + i);
       this.stack.push('diamonds_' + i);
@@ -27,10 +27,7 @@ function shuffle(array: string[]) {
     currentIndex--;
 
     // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
 
   return array;

@@ -1,10 +1,10 @@
 .player {
   display: flex;
   align-items: center;
-  background-color: orange;
+  background-color: #93816c;
   width: 300px;
-  border-top-left-radius: 55px;
-  border-bottom-left-radius: 55px;
+  border-top-left-radius: 45px;
+  border-bottom-left-radius: 45px;
   padding: 10px;
 
   span {
@@ -13,8 +13,13 @@
   }
 
   img {
-    height: 100px;
+    height: 70px;
+    width: 70px;
     object-fit: cover;
     border-radius: 100%;
   }
+}
+
+.player-active {
+  background-color: orange !important;
 }
