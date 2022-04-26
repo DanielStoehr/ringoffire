@@ -23,19 +23,3 @@
 .player-active {
   background-color: orange !important;
 }
-
-@media (max-width: 1050px) {
-  .player {
-    border-radius: 45px;
-    width: unset;
-    padding-right: 50px;
-  }
-}
-
-@media (max-width: 600px) {
-  .player {
-    img {
-      height: 40px;
-    }
-  }
-}

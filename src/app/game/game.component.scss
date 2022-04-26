@@ -10,6 +10,11 @@
 
 .card-stack {
   position: relative;
+  margin-right: 300px;
+
+  @media (max-width: 720px) {
+    margin-right: unset;
+  }
 
   img {
     position: absolute;
@@ -56,6 +61,11 @@
 
 .player-position {
   margin-bottom: 20px;
+  z-index: 1;
+
+  @media (max-width: 720px) {
+    margin-bottom: 0;
+  }
 }
 
 .player-container {
@@ -64,12 +74,29 @@
   top: 0;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 720px) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    right: 0;
+    left: 0;
+    flex-direction: row;
+  }
 }
 
 .btn-add {
   position: absolute;
   right: 32px;
   bottom: 32px;
+
+  @media (max-width: 720px) {
+    opacity: 0.5;
+    transition: opacity 250ms ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .pin-bottom {
@@ -77,82 +104,19 @@
   bottom: 32px;
   left: 100px;
   right: 100px;
-}
 
-@media (max-width: 1050px) {
-  .player-container {
+  @media (max-width: 720px) {
     left: 0;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .player-position {
-    margin: 20px;
-  }
-
-  .played-card {
-    transform: scale(1.3) translateX(140px) rotate(-10deg);
-    right: 20px;
-  }
-
-  .pick-card {
-    animation: pick-card-animation 1s ease-in-out;
-    transform: scale(1.3) translateX(140px) rotate(-10deg);
-  }
-
-  @keyframes pick-card-animation {
-    0% {
-      transform: scale(1);
-    }
-
-    33% {
-      transform: scale(1.7);
-    }
-
-    66% {
-      transform: scale(1.7);
-    }
-
-    100% {
-      transform: scale(1.3) translateX(140px) rotate(-10deg);
-    }
+    right: 0;
+    bottom: 0;
   }
 }
 
-@media (max-width: 600px) {
-  .pin-bottom {
-    left: 10px;
-  }
+app-player,
+app-player-mobile {
+  cursor: pointer;
 
-  .player-position {
-    margin: 5px;
-  }
-
-  .played-card {
-    transform: scale(1) translateX(160px);
-  }
-
-  .pick-card {
-    transform: scale(1) translateX(160px);
-    transition: all 1s ease-in-out;
-  }
-
-  @keyframes pick-card-animation {
-    0% {
-      transform: scale(1);
-    }
-
-    33% {
-      transform: scale(1);
-    }
-
-    66% {
-      transform: scale(1);
-    }
-
-    100% {
-      transform: scale(1) translateX(160px);
-    }
+  &:hover {
+    filter: brightness(1.1);
   }
 }
